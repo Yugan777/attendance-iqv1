@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   TYPOGRAPHY — Inter as primary SaaS font (imported above)
+   ============================================================ */
+
+/* ============================================================
+   LIGHT MODE DESIGN TOKENS
+   ============================================================ */
+:root {
+  /* Core interactions */
+  --button-outline: rgba(0,0,0, .10);
+  --badge-outline: rgba(0,0,0, .05);
+  --opaque-button-border-intensity: -8;
+  --elevate-1: rgba(0,0,0, .03);
+  --elevate-2: rgba(0,0,0, .08);
+
+  /* Palette — indigo-violet primary */
+  --background: 240 20% 98%;
+  --foreground: 240 10% 8%;
+  --border: 240 12% 90%;
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 8%;
+  --card-border: 240 12% 93%;
+  --sidebar: 240 15% 97%;
+  --sidebar-foreground: 240 10% 8%;
+  --sidebar-border: 240 12% 91%;
+  --sidebar-primary: 243 75% 59%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 240 12% 92%;
+  --sidebar-accent-foreground: 240 10% 8%;
+  --sidebar-ring: 243 75% 59%;
+  --popover: 0 0% 99%;
+  --popover-foreground: 240 10% 8%;
+  --popover-border: 240 12% 88%;
+  --primary: 243 75% 59%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 240 10% 92%;
+  --secondary-foreground: 240 10% 8%;
+  --muted: 240 10% 93%;
+  --muted-foreground: 240 5% 42%;
+  --accent: 243 60% 95%;
+  --accent-foreground: 243 75% 35%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --input: 240 12% 84%;
+  --ring: 243 75% 59%;
+
+  /* Chart colors */
+  --chart-1: 243 75% 55%;
+  --chart-2: 173 58% 39%;
+  --chart-3: 197 37% 30%;
+  --chart-4: 43 74% 49%;
+  --chart-5: 27 87% 60%;
+
+  /* Typography */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: 'JetBrains Mono', 'Menlo', monospace;
+  --radius: .625rem;
+
+  /* Elevation shadows — real depth */
+  --shadow-2xs: 0 1px 2px 0 hsl(243 75% 10% / 0.04);
+  --shadow-xs: 0 1px 3px 0 hsl(243 75% 10% / 0.06), 0 1px 2px -1px hsl(243 75% 10% / 0.04);
+  --shadow-sm: 0 2px 6px -1px hsl(243 75% 10% / 0.08), 0 1px 3px -1px hsl(243 75% 10% / 0.05);
+  --shadow: 0 4px 12px -2px hsl(243 75% 10% / 0.10), 0 2px 6px -2px hsl(243 75% 10% / 0.06);
+  --shadow-md: 0 8px 20px -4px hsl(243 75% 10% / 0.12), 0 4px 8px -4px hsl(243 75% 10% / 0.07);
+  --shadow-lg: 0 16px 32px -8px hsl(243 75% 10% / 0.14), 0 8px 16px -8px hsl(243 75% 10% / 0.08);
+  --shadow-xl: 0 24px 48px -12px hsl(243 75% 10% / 0.16), 0 12px 24px -12px hsl(243 75% 10% / 0.10);
+  --shadow-2xl: 0 40px 80px -20px hsl(243 75% 10% / 0.20);
+
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+
+  /* Computed borders */
+  --sidebar-primary-border: hsl(var(--sidebar-primary));
+  --sidebar-primary-border: hsl(from hsl(var(--sidebar-primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --sidebar-accent-border: hsl(var(--sidebar-accent));
+  --sidebar-accent-border: hsl(from hsl(var(--sidebar-accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --primary-border: hsl(var(--primary));
+  --primary-border: hsl(from hsl(var(--primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --secondary-border: hsl(var(--secondary));
+  --secondary-border: hsl(from hsl(var(--secondary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --muted-border: hsl(var(--muted));
+  --muted-border: hsl(from hsl(var(--muted)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --accent-border: hsl(var(--accent));
+  --accent-border: hsl(from hsl(var(--accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --destructive-border: hsl(var(--destructive));
+  --destructive-border: hsl(from hsl(var(--destructive)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+}
+
+/* ============================================================
+   DARK MODE TOKENS
+   ============================================================ */
+.dark {
+  --button-outline: rgba(255,255,255, .10);
+  --badge-outline: rgba(255,255,255, .05);
+  --opaque-button-border-intensity: 9;
+  --elevate-1: rgba(255,255,255, .04);
+  --elevate-2: rgba(255,255,255, .09);
+
+  --background: 240 12% 7%;
+  --foreground: 240 5% 96%;
+  --border: 240 8% 18%;
+  --card: 240 10% 9%;
+  --card-foreground: 240 5% 96%;
+  --card-border: 240 8% 13%;
+  --sidebar: 240 10% 11%;
+  --sidebar-foreground: 240 5% 96%;
+  --sidebar-border: 240 8% 15%;
+  --sidebar-primary: 243 75% 62%;
+  --sidebar-primary-foreground: 0 0% 100%;
+  --sidebar-accent: 240 8% 16%;
+  --sidebar-accent-foreground: 240 5% 96%;
+  --sidebar-ring: 243 75% 62%;
+  --popover: 240 10% 12%;
+  --popover-foreground: 240 5% 96%;
+  --popover-border: 240 8% 17%;
+  --primary: 243 75% 62%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 240 8% 17%;
+  --secondary-foreground: 240 5% 96%;
+  --muted: 240 8% 15%;
+  --muted-foreground: 240 5% 62%;
+  --accent: 243 40% 16%;
+  --accent-foreground: 243 75% 80%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+  --input: 240 8% 24%;
+  --ring: 243 75% 62%;
+
+  --chart-1: 243 75% 70%;
+  --chart-2: 173 58% 60%;
+  --chart-3: 197 37% 55%;
+  --chart-4: 43 74% 68%;
+  --chart-5: 27 87% 72%;
+
+  /* Dark shadows */
+  --shadow-2xs: 0 1px 2px 0 hsl(0 0% 0% / 0.12);
+  --shadow-xs: 0 1px 3px 0 hsl(0 0% 0% / 0.18), 0 1px 2px -1px hsl(0 0% 0% / 0.12);
+  --shadow-sm: 0 2px 6px -1px hsl(0 0% 0% / 0.22), 0 1px 3px -1px hsl(0 0% 0% / 0.15);
+  --shadow: 0 4px 12px -2px hsl(0 0% 0% / 0.28), 0 2px 6px -2px hsl(0 0% 0% / 0.18);
+  --shadow-md: 0 8px 20px -4px hsl(0 0% 0% / 0.35), 0 4px 8px -4px hsl(0 0% 0% / 0.22);
+  --shadow-lg: 0 16px 32px -8px hsl(0 0% 0% / 0.40), 0 8px 16px -8px hsl(0 0% 0% / 0.28);
+  --shadow-xl: 0 24px 48px -12px hsl(0 0% 0% / 0.45), 0 12px 24px -12px hsl(0 0% 0% / 0.32);
+  --shadow-2xl: 0 40px 80px -20px hsl(0 0% 0% / 0.55);
+
+  --sidebar-primary-border: hsl(var(--sidebar-primary));
+  --sidebar-primary-border: hsl(from hsl(var(--sidebar-primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --sidebar-accent-border: hsl(var(--sidebar-accent));
+  --sidebar-accent-border: hsl(from hsl(var(--sidebar-accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --primary-border: hsl(var(--primary));
+  --primary-border: hsl(from hsl(var(--primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --secondary-border: hsl(var(--secondary));
+  --secondary-border: hsl(from hsl(var(--secondary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --muted-border: hsl(var(--muted));
+  --muted-border: hsl(from hsl(var(--muted)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --accent-border: hsl(var(--accent));
+  --accent-border: hsl(from hsl(var(--accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+  --destructive-border: hsl(var(--destructive));
+  --destructive-border: hsl(from hsl(var(--destructive)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+}
+
+/* ============================================================
+   BASE STYLES
+   ============================================================ */
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-feature-settings: "cv11", "ss01";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply font-sans bg-background text-foreground;
+  }
+
+  /* Smooth scrolling */
+  * {
+    scroll-behavior: smooth;
+  }
+}
+
+/* ============================================================
+   COMPONENT UTILITIES
+   ============================================================ */
+@layer components {
+
+  /* Glass card — frosted glass panel */
+  .glass-card {
+    @apply bg-white/70 dark:bg-gray-900/70 backdrop-blur-xl border border-white/20 dark:border-white/10;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255,255,255,0.5);
+  }
+
+  .glass-card-dark {
+    @apply bg-black/40 backdrop-blur-xl border border-white/10;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255,255,255,0.08);
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-indigo-600 via-violet-600 to-purple-600 bg-clip-text text-transparent;
+  }
+
+  .gradient-text-blue {
+    @apply bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent;
+  }
+
+  /* Primary glow effect */
+  .glow-primary {
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.4), 0 0 40px rgba(99, 102, 241, 0.15);
+  }
+
+  .glow-green {
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.4), 0 0 40px rgba(34, 197, 94, 0.15);
+  }
+
+  .glow-red {
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
+  }
+
+  /* Premium gradient button */
+  .btn-primary-gradient {
+    @apply bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-500 hover:to-violet-500 text-white font-semibold;
+    @apply shadow-lg transition-all duration-200 hover:shadow-indigo-500/30 hover:scale-[1.02] active:scale-[0.98];
+  }
+
+  /* Stat card with colored accent */
+  .stat-card {
+    @apply rounded-2xl border p-5 transition-all duration-200 hover:shadow-md;
+  }
+
+  /* Animated gradient border */
+  .gradient-border {
+    position: relative;
+    background: linear-gradient(var(--background), var(--background)) padding-box,
+                linear-gradient(135deg, hsl(var(--primary)), hsl(270 75% 60%), hsl(var(--primary))) border-box;
+    border: 1px solid transparent;
+  }
+
+  /* Page entry animation */
+  .page-enter {
+    animation: fadeUp 0.35s ease-out forwards;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* ============================================================
+   LAYOUT UTILITIES
+   ============================================================ */
+@layer utilities {
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}

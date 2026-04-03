@@ -1,0 +1,13 @@
+Flask
+flask-cors
+opencv-python
+numpy
+mtcnn
+keras-facenet
+pillow
+h5py
+tensorflow
+scipy
+werkzeug
+gunicorn
+python-dotenv

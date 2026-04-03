@@ -1,0 +1,22 @@
+# Node.js
+node_modules/
+dist/
+server/public/
+.env
+.env.*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+attendance/attendance_model/data/*.db
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build/Archive
+*.zip
+*.tar.gz

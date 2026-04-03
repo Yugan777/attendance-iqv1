@@ -1,0 +1,45 @@
+Act as a Senior React Developer. Build a professional attendance dashboard with these requirements:
+
+Clerk Auth & Metadata: Implement a signup flow where teachers select their 'Subject'. Store this in Clerk publicMetadata with status: 'pending'.
+
+Approval Shield: Use a middleware or a wrapper component to block access to the app unless user.publicMetadata.status === 'approved'. Show a 'Waiting for Admin Approval' screen for pending users.
+
+Timetable Grid: Build a 5x8 grid (Mon-Fri, 8 periods). Use the current system time to highlight the 'Active Session' in green. Make other slots unclickable.
+
+10-Photo Burst Enrollment: Using react-webcam, create an enrollment trigger. When clicked, it must take 10 snapshots (one every 200ms), show a progress bar (1/10... 10/10), and send the array of base64 strings to http://<PI_IP>:5000/api/enroll.
+
+Attendance UI: A grid of student cards with 3-state toggles: Present (Green), Absent (Red), and Late (Yellow).
+
+PDF Download: A button to fetch a PDF blob from the backend and trigger a browser download." prd file = PRD 1: Frontend Developer (React/Vite)
+
+Core Objectives
+Develop the primary interface for teachers and admins. Use Clerk for identity management and interface with the local Raspberry Pi API for all AI-related tasks.
+
+Authentication & Authorization (Clerk)
+Teacher Registration: Implement a signup flow. On completion, redirect to an "Onboarding" page to capture their Subject and set publicMetadata.status = 'pending'.
+
+Admin Shield: Protect the Dashboard and Attendance routes. If status !== 'approved', show a "Waiting for Approval" screen.
+
+Admin Panel: A dedicated route for the principal to view all users with pending status and a button to toggle them to approved.
+
+Feature Set
+Timetable Grid: A 5x8 grid view. Current time-slot must be highlighted. Other slots should be unclickable.
+10-Photo Burst Enrollment:
+
+Implement a 3-second countdown.
+
+Capture 10 snapshots (one every 200ms).
+
+Show a "Processing AI" loading state while Python calculates the average embedding.
+
+Attendance UI (Based on Screenshots):
+
+Grid of student cards with 3-state toggles (Present/Absent/Late).
+
+"Auto-Capture" button to trigger the Pi's MTCNN detector.
+
+Reports: Fetch the Defaulter List (students < 75%) and handle the PDF blob download.
+
+Technical Specs
+Stack: React 18, Tailwind CSS, Shadcn UI, Clerk SDK.
+Network: All API calls go to http://<PI_IP>:5000.
