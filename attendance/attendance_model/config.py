@@ -11,7 +11,7 @@ BLUR_THRESHOLD = float(os.environ.get("BLUR_THRESHOLD", "12")) # More lenient fo
 # Camera settings (PRD Section 12)
 # Default RTSPS URL provided by user
 # Note: rtsps requires OpenCV built with FFmpeg support (standard on most Pi OS builds)
-DEFAULT_RTSP_URL = "rtsps://admin:AttendanceCam_Alpha23@192.168.1.197:554/video/live?channel=1&subtype=1"
+DEFAULT_RTSP_URL = "rtsps://admin:AttendanceCam_Alpha23@192.168.0.200:554/video/live?channel=1&subtype=1"
 
 # Camera source: can be an integer (USB index) or a string (RTSP URL)
 CAMERA_SOURCE = os.environ.get("CAMERA_SOURCE", DEFAULT_RTSP_URL)
